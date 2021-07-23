@@ -1,18 +1,16 @@
 package com.lucasesteves.rogalabsapi.model
 
-class Posts {
-    @SerializedName("id")
-    var id:Int=0
+import com.google.gson.annotations.SerializedName
 
+data class Posts(
     @SerializedName("userId")
-    var userId:Int=0
-
+    var userId : Int,
+    @SerializedName("id")
+    var id : Int,
     @SerializedName("title")
-    var title:String=""
-
+    var title : String,
     @SerializedName("body")
-    var body:String=""
-}
-
+    var body : String
+){}
 
 
