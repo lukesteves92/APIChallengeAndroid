@@ -2,7 +2,7 @@ package com.lucasesteves.rogalabsapi.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Posts(
+data class posts(
     @SerializedName("userId")
     var userId : Int,
     @SerializedName("id")
