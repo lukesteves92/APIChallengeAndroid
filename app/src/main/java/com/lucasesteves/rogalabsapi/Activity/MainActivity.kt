@@ -1,7 +1,8 @@
-package com.lucasesteves.rogalabsapi
+package com.lucasesteves.rogalabsapi.Activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.lucasesteves.rogalabsapi.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
