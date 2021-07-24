@@ -23,7 +23,7 @@
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/black"
                 app:titleCentered="true"
-                tools:title="O que a galera comentou sobre:teste" />
+                app:title="@string/textComentario" />
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/topAppBar2"
