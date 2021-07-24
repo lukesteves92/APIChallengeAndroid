@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<List<Posts>>, response: Response<List<Posts>>) {
                 response.body()?.forEach { body ->
-                    showRecycleView(listOf(Posts(body.title, body.body)))
+                    showRecycleView(listOf(Posts(body.userId, body.id, body.title, body.body)))
                 }
             }
         })

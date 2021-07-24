@@ -33,6 +33,8 @@ class PostsAdapter(
         ) {
             binding.titleAPI.text = Posts.title
             binding.bodyAPI.text = Posts.body
+            binding.useridAPI.text = Posts.userId.toString()
+            binding.idAPI.text = Posts.id.toString()
             binding.postsContainer.setOnClickListener {
                 onClickListener(Posts)
             }

@@ -50,6 +50,32 @@
             app:layout_constraintTop_toBottomOf="@+id/titleAPI"
             app:layout_constraintVertical_bias="1.0"
             tools:text="Corpo do Post" />
+
+        <TextView
+            android:id="@+id/idAPI"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/useridAPI"
+            app:layout_constraintStart_toStartOf="@+id/titleAPI"
+            app:layout_constraintTop_toBottomOf="@+id/bodyAPI"
+            app:layout_constraintVertical_bias="1.0"
+            tools:text="ID" />
+
+        <TextView
+            android:id="@+id/useridAPI"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/idAPI"
+            app:layout_constraintTop_toBottomOf="@+id/bodyAPI"
+            app:layout_constraintVertical_bias="1.0"
+            tools:text="UserID" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>
