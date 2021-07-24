@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:id="@+id/comentarioContainer"
+    android:background="?selectableItemBackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/fotoPerfil"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="@dimen/marginImagemPost"
+            android:adjustViewBounds="true"
+            />
+
+        <TextView
+            android:id="@+id/nameAPI"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginStartTitle"
+            android:layout_marginTop="@dimen/marginTopTitle"
+            android:layout_marginEnd="@dimen/marginEndTitle"
+            android:textSize="@dimen/nameComent"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/emailAPI"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/fotoPerfil"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Nome do Autor" />
+
+        <TextView
+            android:id="@+id/emailAPI"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/marginBottomBody"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/nameAPI"
+            app:layout_constraintStart_toStartOf="@+id/nameAPI"
+            app:layout_constraintTop_toBottomOf="@+id/nameAPI"
+            app:layout_constraintVertical_bias="1.0"
+            tools:text="Email do Autor" />
+
+        <TextView
+            android:id="@+id/descricaoAPI"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/fotoPerfil"
+            app:layout_constraintStart_toStartOf="@+id/fotoPerfil"
+            app:layout_constraintEnd_toEndOf="@+id/emailAPI"
+            android:layout_marginTop="@dimen/marginTopTitle"
+            tools:text="Descrição do Autor" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

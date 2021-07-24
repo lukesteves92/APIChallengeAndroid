@@ -1,5 +1,6 @@
 package com.lucasesteves.rogalabsapi.Activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -43,8 +44,13 @@ class MainActivity : AppCompatActivity() {
     private fun showData(postList: List<Posts>) {
         postList.forEach { it ->
             val postAdapter = PostsAdapter(postList) {
-                Toast.makeText(baseContext, "${it.title} - ${it.body}", Toast.LENGTH_SHORT)
-                    .show()
+                var titleComentario = it.title
+                var bundle = Bundle()
+                with(bundle) {
+                    putString(KEY_TITLE, titleComentario)
+                }
+                startActivity(Intent(this@MainActivity,ComentarioActivity::class.java), bundle)
+
             }
             with(binding) {
                 postsRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
@@ -53,6 +59,10 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+    }
+
+    companion object {
+        const val KEY_TITLE = "título"
     }
 
 
