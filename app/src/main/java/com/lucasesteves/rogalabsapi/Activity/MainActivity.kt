@@ -41,10 +41,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showData(postList: List<Posts>) {
-        val postAdapter = PostsAdapter(postList)
-        with(binding) {
-            postsRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
-            postsRecyclerView.adapter = postAdapter
+        postList.forEach { it ->
+            val postAdapter = PostsAdapter(postList) {
+                Toast.makeText(baseContext, "${it.title} - ${it.body}", Toast.LENGTH_SHORT)
+                    .show()
+            }
+            with(binding) {
+                postsRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
+                postsRecyclerView.adapter = postAdapter
+            }
+
         }
 
     }

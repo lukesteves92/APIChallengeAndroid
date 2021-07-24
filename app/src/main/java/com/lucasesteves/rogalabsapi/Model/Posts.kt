@@ -10,7 +10,8 @@ data class Posts(
     @SerializedName("title")
     var title : String,
     @SerializedName("body")
-    var body : String
-){}
+    var body : String,
+
+    ){}
 
 

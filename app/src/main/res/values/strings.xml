@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RogaLabsAPI</string>
+    <string name="page_title">Postagens Recentes</string>
 </resources>

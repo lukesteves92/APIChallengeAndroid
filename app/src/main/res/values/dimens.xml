@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="marginImagemPost">8dp</dimen>
+    <dimen name="marginStartTitle">16dp</dimen>
+    <dimen name="marginTopTitle">8dp</dimen>
+    <dimen name="marginEndTitle">16dp</dimen>
+    <dimen name="titlePost">18sp</dimen>
+    <dimen name="marginBottomBody">16dp</dimen>
+</resources>
