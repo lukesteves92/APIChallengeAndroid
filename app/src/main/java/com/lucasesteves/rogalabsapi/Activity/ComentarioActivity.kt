@@ -44,6 +44,8 @@ class ComentarioActivity : AppCompatActivity() {
         val title = intent.getStringExtra(KEY_TITLE)
         val id = intent.getIntExtra(KEY_POSTID, 0)
 
+        endpoint.changeID(id)
+
         binding.topAppBar2.title = title
 
         callback.enqueue(object : Callback<List<Comentario>> {
