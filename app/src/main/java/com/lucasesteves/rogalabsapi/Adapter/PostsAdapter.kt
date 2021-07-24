@@ -1,15 +1,14 @@
-package com.lucasesteves.rogalabsapi.adapter
+package com.lucasesteves.rogalabsapi.Adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.lucasesteves.rogalabsapi.model.posts
+import com.lucasesteves.rogalabsapi.Model.Posts
 import com.lucasesteves.rogalabsapi.databinding.PostsBinding
-import retrofit2.Response
 
 class PostsAdapter(
-    private val postsList: List<posts>,
-    private val onClickListener: (posts: posts) -> Unit
+    private val postsList: List<Posts>,
+    private val onClickListener: (Posts: Posts) -> Unit
 ) : RecyclerView.Adapter<PostsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,13 +28,13 @@ class PostsAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(
-            posts: Response<List<posts>>,
-            onClickListener: (posts: posts) -> Unit
+            Posts: Posts,
+            onClickListener: (Posts: Posts) -> Unit
         ) {
-            binding.titleAPI.text = posts.title
-            binding.bodyAPI.text = posts.body
+            binding.titleAPI.text = Posts.title
+            binding.bodyAPI.text = Posts.body
             binding.postsContainer.setOnClickListener {
-                onClickListener(posts)
+                onClickListener(Posts)
             }
 
         }
