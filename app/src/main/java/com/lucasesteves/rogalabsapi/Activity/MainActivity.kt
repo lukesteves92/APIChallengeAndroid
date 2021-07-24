@@ -17,10 +17,10 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    val retrofitClient = RetrofitInstance
+    private val retrofitClient = RetrofitInstance
         .getRetrofitInstance("https://jsonplaceholder.typicode.com")
-    val endpoint = retrofitClient.create(Endpoint::class.java)
-    val callback = endpoint.getPosts()
+    private val endpoint = retrofitClient.create(Endpoint::class.java)
+    private val callback = endpoint.getPosts()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,23 +35,17 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call<List<Posts>>, response: Response<List<Posts>>) {
-                response.body()?.forEach { it ->
-                    val postList = listOf(Posts(it.userId, it.id,it.title, it.body))
-                    val postAdapter = PostsAdapter(postList) {
-                        Toast.makeText(
-                            this@MainActivity,
-                            "${it.title} - ${it.body}",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
-                    with(binding) {
-                        postsRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
-                        postsRecyclerView.adapter = postAdapter
-
-                    }
-                }
+                showData(response.body()!!)
             }
         })
+    }
+
+    private fun showData(postList: List<Posts>) {
+        val postAdapter = PostsAdapter(postList)
+        with(binding) {
+            postsRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
+            postsRecyclerView.adapter = postAdapter
+        }
 
     }
 

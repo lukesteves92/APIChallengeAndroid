@@ -7,8 +7,7 @@ import com.lucasesteves.rogalabsapi.Model.Posts
 import com.lucasesteves.rogalabsapi.databinding.PostsBinding
 
 class PostsAdapter(
-    private val postsList: List<Posts>,
-    private val onClickListener: (Posts: Posts) -> Unit
+    private val postsList: List<Posts>
 ) : RecyclerView.Adapter<PostsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -18,7 +17,7 @@ class PostsAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(postsList[position], onClickListener)
+        holder.bind(postsList[position])
     }
 
     override fun getItemCount() = postsList.size
@@ -28,16 +27,12 @@ class PostsAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(
-            Posts: Posts,
-            onClickListener: (Posts: Posts) -> Unit
+            Posts: Posts
         ) {
-            binding.titleAPI.text = Posts.title
-            binding.bodyAPI.text = Posts.body
             binding.useridAPI.text = Posts.userId.toString()
             binding.idAPI.text = Posts.id.toString()
-            binding.postsContainer.setOnClickListener {
-                onClickListener(Posts)
-            }
+            binding.titleAPI.text = Posts.title
+            binding.bodyAPI.text = Posts.body
 
         }
     }
