@@ -6,9 +6,11 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface EndpointComents {
-    @GET("posts/{post_id}/comments")
+    @GET("posts/10/comments")
 
-    fun getComents(@Path("post_id") id: Int) : Call<List<Comentario>>
+    fun getComents() : Call<List<Comentario>>
+
+//    fun changeID(@Path("{post_id}") id: String)
 
 
 }

@@ -31,15 +31,13 @@ class ComentarioActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityComentarioBinding
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityComentarioBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val title = intent.getStringExtra(KEY_TITLE)
-        val id = intent.getIntExtra(KEY_POSTID, 0)
+        val id = intent.getStringExtra(KEY_POSTID).toString()
 
 
         binding.topAppBar2.title = title
@@ -47,7 +45,8 @@ class ComentarioActivity : AppCompatActivity() {
         val retrofitClient = RetrofitInstance
             .getRetrofitInstance("https://jsonplaceholder.typicode.com")
         val endpoint = retrofitClient.create(EndpointComents::class.java)
-        val callback = endpoint.getComents(id)
+        val callback = endpoint.getComents()
+        
 
         callback.enqueue(object : Callback<List<Comentario>> {
             override fun onFailure(call: Call<List<Comentario>>, t: Throwable) {
