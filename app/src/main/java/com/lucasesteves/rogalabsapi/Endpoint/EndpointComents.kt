@@ -7,4 +7,5 @@ import retrofit2.http.GET
 interface EndpointComents {
     @GET("posts/50/comments")
     fun getComents() : Call<List<Comentario>>
+
 }

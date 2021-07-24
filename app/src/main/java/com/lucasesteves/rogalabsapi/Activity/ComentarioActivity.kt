@@ -42,6 +42,7 @@ class ComentarioActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val title = intent.getStringExtra(KEY_TITLE)
+        val id = intent.getIntExtra(KEY_POSTID, 0)
 
         binding.topAppBar2.title = title
 
@@ -70,6 +71,7 @@ class ComentarioActivity : AppCompatActivity() {
 
     companion object {
         const val KEY_TITLE = "título"
+        const val KEY_POSTID = "id"
     }
 
 }
