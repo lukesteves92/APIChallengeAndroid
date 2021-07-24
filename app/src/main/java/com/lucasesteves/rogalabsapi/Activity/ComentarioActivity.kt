@@ -43,7 +43,7 @@ class ComentarioActivity : AppCompatActivity() {
 
         val title = intent.getStringExtra(KEY_TITLE)
 
-        binding.topAppBar.title = "O que a galera comentou sobre: $title"
+        binding.topAppBar2.title = "O que a galera comentou sobre: $title"
 
         callback.enqueue(object : Callback<List<Comentario>> {
             override fun onFailure(call: Call<List<Comentario>>, t: Throwable) {
