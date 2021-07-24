@@ -44,13 +44,10 @@ class MainActivity : AppCompatActivity() {
     private fun showData(postList: List<Posts>) {
         postList.forEach { it ->
             val postAdapter = PostsAdapter(postList) {
-                var titleComentario = it.title
-                var bundle = Bundle()
-                with(bundle) {
-                    putString(KEY_TITLE, titleComentario)
-                }
-                startActivity(Intent(this@MainActivity,ComentarioActivity::class.java), bundle)
-
+                val titleComentario = it.title
+                val intent = Intent(this@MainActivity, ComentarioActivity::class.java)
+                intent.putExtra(KEY_TITLE, titleComentario)
+                startActivity(intent)
             }
             with(binding) {
                 postsRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
