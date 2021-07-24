@@ -42,7 +42,6 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
-
         callback.enqueue(object : Callback<List<Posts>> {
             override fun onFailure(call: Call<List<Posts>>, t: Throwable) {
                 Toast.makeText(baseContext, t.message, Toast.LENGTH_SHORT).show()
