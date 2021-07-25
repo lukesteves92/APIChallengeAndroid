@@ -34,8 +34,6 @@ class ComentarioAdapter(
             binding.emailAPI.text = Comentario.email
             binding.descricaoAPI.text = Comentario.body
             binding.fotoPerfil.setImageResource(R.drawable.perfil)
-
-
         }
     }
 }

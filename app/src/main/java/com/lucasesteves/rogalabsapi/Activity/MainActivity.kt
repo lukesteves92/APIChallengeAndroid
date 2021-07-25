@@ -3,6 +3,7 @@ package com.lucasesteves.rogalabsapi.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lucasesteves.rogalabsapi.Adapter.PostsAdapter
@@ -45,10 +46,8 @@ class MainActivity : AppCompatActivity() {
         postList.forEach { it ->
             val postAdapter = PostsAdapter(postList) {
                 val titleComentario = it.title
-                val idComentario = it.postId
                 val intent = Intent(this@MainActivity, ComentarioActivity::class.java)
                 intent.putExtra(KEY_TITLE, titleComentario)
-                intent.putExtra(KEY_POSTID, idComentario)
                 startActivity(intent)
             }
             with(binding) {
@@ -62,7 +61,6 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         const val KEY_TITLE = "título"
-        const val KEY_POSTID = "id"
     }
 
 

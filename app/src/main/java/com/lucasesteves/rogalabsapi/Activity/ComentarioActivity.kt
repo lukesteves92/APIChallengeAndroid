@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
@@ -37,16 +38,14 @@ class ComentarioActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val title = intent.getStringExtra(KEY_TITLE)
-        val id = intent.getStringExtra(KEY_POSTID).toString()
-
 
         binding.topAppBar2.title = title
 
         val retrofitClient = RetrofitInstance
             .getRetrofitInstance("https://jsonplaceholder.typicode.com")
         val endpoint = retrofitClient.create(EndpointComents::class.java)
-        val callback = endpoint.getComents()
-        
+        val callback =  endpoint.getComents()
+
 
         callback.enqueue(object : Callback<List<Comentario>> {
             override fun onFailure(call: Call<List<Comentario>>, t: Throwable) {
@@ -73,7 +72,7 @@ class ComentarioActivity : AppCompatActivity() {
 
     companion object {
         const val KEY_TITLE = "título"
-        const val KEY_POSTID = "id"
+
     }
 
 }
